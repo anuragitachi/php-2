@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Bookstore</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
+
+<script>
+function validateForm() {
+
+var pwd1=document.forms["Form"]["pass"].value;
+var pwd2=document.forms["Form"]["rpass"].value;
+if(pwd1!=pwd2)
+    {
+                        alert "password doesn't match";
+                        return false;
+    }
+var y= document.getElementById("phone").value;
+if (isNaN(y)) {
+        alert("phone no must contain only digits");
+        return false;
+    }
+
+var a= document.getElementById("pass").value;
+var b= document.getElementById("rpass").value;
+if (a!=b) {
+        alert("Both the passwords don't match. Please enter again.");
+        return false;
+    }
+
+}
+</script>
+
+</head>
+
+<body>
+<h1 style="background-color:gray;color:black;font-size:280%;">pet store</h1>
+<div class="main">
+<div class="page">
+<div class="page-in">
+<div class="header">
+<div class="topmenu">
+
+<ul>
+  <li>
+<a href="index.html">Home</a></li>
+  <li><a href="signup.html">Sign up</a></li>
+  <li><a href="login.html">Login</a></li>
+  <li><a href="contact.html">Contact us</a></li>
+</ul>
+
+</div>
+<img src="04.jpg" alt="petstore" width="995" height="378">
+</div>
+<form action="sign.php" name="Form"  class="register" onsubmit="return validateForm()" method="post">
+            <h1>Sign up</h1>
+            <fieldset class="row1">
+                <p>
+                    <label>Name *
+                    </label>
+                    <input type="text" name="name" class="long" required>
+                </p>
+				<p>
+                    <label>Username *
+                    </label>
+                    <input type="text" name="user" class="long" required>
+                </p>
+				<p>
+                    <label>Email *
+                    </label>
+                    <input type="email" name="email" class="long" required>
+                </p>
+				<p>
+                    <label>Password *
+                    </label>
+                    <input type="password" name="pass" class="long" required>
+                </p>
+				<p>
+                    <label> Retype Password *
+                    </label>
+                    <input type="password" name="rpass" class="long" required>
+                </p>
+                <p>
+                    <label>Phone *
+                    </label>
+                    <input type="text" name="phone" maxlength="10" required>
+                </p>
+                <p>
+                    <label class="optional">Address
+                    </label>
+                    <input type="text" name="address" class="long"/>
+                </p>
+
+            </fieldset>
+            <div>
+                <button type="submit" class="button">Sign up &raquo;</button></div>
+			<div><button type="reset" class="button">Clear &raquo;</button></div>
+        </form>
+
+<div class="footer">
+<p class="copyright-text">&copy;Designed for IWP project</p>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
